@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+        body{
+            display: flex;
+        }
+        body img{
+            width: 200px;
+            height: 290px;
+            flex-direction: row;
+        }
+        body p{
+            background-color: antiquewhite;
+            margin-left: 20px;
+        }
+        .foto{
+            background-color: bisque;
+            height: 360px;
+            width: 220px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.37);
+        }
+        .foto h1{
+            font-size: 1em;
+            font-family: 'Indie Flower', cursive;
+        }
+
+        input#open{
+            display: none;
+        }
+
+        .christmas-card {
+            position: relative;
+            width: 450px; /* Largura do cartão */
+            height: 500px; /* Altura do cartão */
+            transform-style: preserve-3d;
+            transform: perspective(2400px); /* Perspectiva para o efeito 3D */
+            transition: 3s; /* Transição suave para transformações */
+        } 
+
+        .card-front {
+            position: relative; /* Posicionamento relativo para os filhos */
+            background-color: red; /* Cor de fundo branca para a frente do cartão */
+            width: 450px; /* Largura do cartão */
+            height: 500px; /* Altura do cartão */
+            overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+            transform-origin: right; /* Origem da transformação para o lado esquerdo */
+            box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra interna e externa para efeito visual */
+            border-radius: 10px; /* Bordas arredondadas */
+            transition: .3s; /* Transição suave para transformações */
+        }
+
+        .open {
+            position: absolute; /* Posicionamento absoluto em relação ao `.christmas-card` */
+            width: 450px; /* Largura do cartão */
+            height: 500px; /* Altura do cartão */
+            left: 0; /* Alinhado à esquerda do contêiner */
+            top: 0; /* Alinhado ao topo do contêiner */
+            z-index: 6; /* Garante que está acima de outros elementos para ser clicável */
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+        }
+
+        .dentro{
+            position: absolute;
+            z-index: -1; /* Posiciona abaixo da frente do cartão */
+            left: 0; /* Alinhado à esquerda do contêiner */
+            top: 0; /* Alinhado ao topo do contêiner */
+        }
+
+        #open:checked~.card-front {
+            transform: rotateY(155deg); /* Gira a frente do cartão para 'abrir' */
+            box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra para efeito visual */
+            border-radius: 10px; /* Bordas arredondadas */
+        }
+
+        #open:checked~.card-front:before {
+            z-index: 5; /* Posiciona acima de outros elementos internos quando o cartão está aberto */
+        }
+    </style>
+</head>
+<body>
+    <div class="christmas-card">
+        <input id="open" type="checkbox">
+        <label class="open" for="open"></label>
+        <div class="card-front">
+            <div class="card">
+                <h1>clique para abrir</h1>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dentro">
+        <div class="foto">
+            <img src="img3.jpeg" alt="">
+            <h1>21/12/2023</h1>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga laudantium doloremque praesentium minus, recusandae alias et? Magni deserunt expedita odit dignissimos non officia deleniti nihil. Deserunt quos expedita et re quam officiis quia sit, </p>
+    </div>
+    
+</body>
+</html>

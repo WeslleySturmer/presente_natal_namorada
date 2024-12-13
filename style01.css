@@ -1,0 +1,675 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Indie+Flower&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --cor1: #1d351d;
+    --cor2: #325632;
+    --cor3: #8b181d;
+    --cor4: #6f0f11;
+    --cor5: #e6b99a;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cor5);
+    color: black;
+}
+body.red-background {
+    background-image: linear-gradient(var(--cor3), var(--cor4));
+    /*background-color: var(--cor3);*/
+    background: 
+    linear-gradient(to right, var(--cor2) 100%, transparent 0px) 0px 40px, 
+    linear-gradient(to bottom, var(--cor2) 100%, transparent 0px) 40px 0px,
+    linear-gradient(to right, var(--cor1) 100%, transparent 0px) 0px 40px, 
+    linear-gradient(to bottom, var(--cor1) 100%, transparent 0px) 40px 0px,
+    linear-gradient(to bottom, var(--cor3), var(--cor4));
+    background-size: 100% 20px, 20px 100%, 100% 33px, 33px 100%, 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.container-presente{
+    display: flex;
+    width: 100vh;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: 'Ephesis', sans-serif;
+    font-size: 2em;
+}
+
+.texto {
+    opacity: 100%;
+    margin-bottom: 40px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: -1;
+    position: absolute;
+}
+
+.presente {
+    position: relative;
+    width: 150px;   
+    height: 150px;
+    cursor: pointer;
+    transition: all 1.5s ease-in-out;
+    z-index: 10;
+    transform-origin: center;
+    background: var(--cor3); /* Certifique-se de ter a cor do presente */
+    border-radius: 10px;
+    z-index: 1;
+    top: 150px;
+}
+
+.presente.opened {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    transform-origin: center;
+}
+
+.caixa {
+    width: 100%;
+    height: 100%;
+    background: var(--cor);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.fitah {
+    position: absolute;
+    width: 100%;
+    background: var(--cor1);
+    height: 20px;
+    top: 54px;
+}
+.fitah2{
+    position: absolute;
+    width: 100%;
+    background: var(--cor2);
+    height: 20px;
+    top: 40px;
+    z-index: 1;
+}
+
+.fitav {
+    position: absolute;
+    width: 20px;
+    background: var(--cor1);
+    height: 100%;
+    top: 0px;
+    left: 54px;
+}
+.fitav2 {
+    position: absolute;
+    width: 20px;
+    background: var(--cor2);
+    height: 100%;
+    top: 0px;
+    left: 40px;
+    z-index: 1;
+}
+
+
+.blog{
+    border-radius: 20px;
+    margin-top: 110px;
+    padding: 30px;
+    background-color: rgb(240, 229, 208);
+    width: 1300px;
+    font-size: 1.3em;
+    line-height: 1.7em;
+    box-shadow: 12px 12px 3px rgba(0, 0, 0, 0.322);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    transition: opacity 1.2s ease, transform 1.2s ease, visibility 1.2s ease;
+}
+.blog.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible; /* Torna visível */
+    position: relative;
+    margin-top: 100px;
+}
+.blog h1{
+    color: var(--cor1);
+    margin: 30px;
+    font-family: 'Ephesis', cursive;
+    text-align: center;
+    font-size: 4em;
+}
+.blog h2{
+    color: var(--cor1);
+    margin: 20px;
+    font-family: 'Poppins', cursive;
+    text-align: center;
+    font-size: 2.5em;
+}
+.blog p{
+    color: black;
+    font-family: 'Poppins', cursive;
+    text-align: justify;
+    font-size: 1em;
+}
+
+
+.foto{
+    background-color: var(--cor5);
+    height: 360px;
+    width: 220px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.37), inset 2px 0px 4px rgba(0, 0, 0, 0.445);
+}
+.foto h1{
+    font-size: 1em;
+    font-family: 'Indie Flower', cursive;
+    color: var(--cor1);
+}
+.foto img{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.295);
+}
+
+.fotoi{
+    background-color: var(--cor5);
+    height: 360px;
+    width: 220px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.37), inset -2px 0px 4px rgba(0, 0, 0, 0.445);
+}
+.fotoi h1{
+    font-size: 1em;
+    font-family: 'Indie Flower', cursive;
+    color: var(--cor1);
+}
+.fotoi img{
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.295);
+}
+
+.foto-texto{
+    display: flex;
+    margin: 10px;
+}
+
+.foto-texto-invertido{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
+
+}
+.foto-texto-final{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 10px;
+
+}
+.foto-texto p{
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-indent: 40px;
+}
+
+.foto-texto-invertido p{
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-indent: 40px;
+}
+
+.foto-texto-final p{
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-indent: 40px;
+}
+
+#img1{
+    width: 370px;
+    height: 580px;
+    position: absolute;
+}
+.img1{
+    width: 350px;
+    height: auto;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.438);
+}
+
+#img2{
+    width: 340px;
+    height: 550px;
+    position: absolute;
+}
+.img2{
+    width: 320px;
+    height: auto;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.438);
+}
+
+#img3{
+    width: 340px;
+    height: 550px;
+    position: absolute;
+}
+.img3{
+    width: 320px;
+    height: auto;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.438);
+}
+
+#img4{
+    width: 340px;
+    height: 550px;
+    position: absolute;
+}
+.img4{
+    width: 320px;
+    height: auto;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.438);
+}
+
+#img5{
+    width: 440px;
+    height: 430px;
+    position: absolute;
+}
+.img5{
+    width: 420px;
+    height: auto;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.438);
+}
+
+#img6{
+    width: 340px;
+    height: 460px;
+    position: absolute;
+}
+.img6{
+    width: 320px;
+    height: auto;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.438);
+}
+#img7{
+    width: 340px;
+    height: 460px;
+    position: absolute;
+    align-self: center;
+}
+.img7{
+    width: 320px;
+    height: auto;
+    box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.438);
+}
+
+
+input#open1{
+    display: none;
+}
+
+.tampa-foto1 {
+    position: relative;
+    width: 370px;
+    height: 580px;
+    transform-style: preserve-3d;
+    transform: perspective(2400px); /* Perspectiva para o efeito 3D */
+    transition: 3s; /* Transição suave para transformações */
+    z-index: 5;
+} 
+
+
+.card-front1 {
+    position: relative; /* Posicionamento relativo para os filhos */
+    background-color: var(--cor4); /* Cor de fundo branca para a frente do cartão */
+    width: 370px; /* Largura do cartão */
+    height: 580px; /* Altura do cartão */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    transform-origin: left; /* Origem da transformação para o lado esquerdo */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra interna e externa para efeito visual */
+    transition: .3s; /* Transição suave para transformações */
+}
+.open1 {
+    position: absolute; /* Posicionamento absoluto em relação ao `.christmas-card` */
+    width: 370px;
+    height: 580px;
+    left: 0; /* Alinhado à esquerda do contêiner */
+    top: 0; /* Alinhado ao topo do contêiner */
+    z-index: 6; /* Garante que está acima de outros elementos para ser clicável */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+#open1:checked~.card-front1 {
+    transform: rotateY(-155deg); /* Gira a frente do cartão para 'abrir' */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra para efeito visual */
+}
+
+#open1:checked~.card-front1:before {
+    z-index: 5; /* Posiciona acima de outros elementos internos quando o cartão está aberto */
+}
+.card1 h1{
+    font-family: 'Ephesis', cursive;
+    font-size: 2em;
+    color: white;
+}
+
+
+input#open2{
+    display: none;
+}
+
+.tampa-foto2 {
+    position: relative;
+    width: 340px;
+    height: 550px;
+    transform-style: preserve-3d;
+    transform: perspective(2400px); /* Perspectiva para o efeito 3D */
+    transition: 3s; /* Transição suave para transformações */
+    z-index: 5;
+} 
+
+
+.card-front2 {
+    position: relative; /* Posicionamento relativo para os filhos */
+    background-color: var(--cor4); /* Cor de fundo branca para a frente do cartão */
+    width: 340px; /* Largura do cartão */
+    height: 550px; /* Altura do cartão */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    transform-origin: right; /* Origem da transformação para o lado esquerdo */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra interna e externa para efeito visual */
+    transition: .3s; /* Transição suave para transformações */
+}
+.open2 {
+    position: absolute; /* Posicionamento absoluto em relação ao `.christmas-card` */
+    width: 340px;
+    height: 550px;
+    left: 0; /* Alinhado à esquerda do contêiner */
+    top: 0; /* Alinhado ao topo do contêiner */
+    z-index: 6; /* Garante que está acima de outros elementos para ser clicável */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+#open2:checked~.card-front2 {
+    transform: rotateY(155deg); /* Gira a frente do cartão para 'abrir' */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra para efeito visual */
+}
+
+#open2:checked~.card-front2:before {
+    z-index: 5; /* Posiciona acima de outros elementos internos quando o cartão está aberto */
+}
+.card2 h1{
+    font-family: 'Ephesis', cursive;
+    font-size: 2em;
+    color: white;
+}
+
+
+input#open3{
+    display: none;
+}
+
+.tampa-foto3 {
+    position: relative;
+    width: 340px;
+    height: 550px;
+    transform-style: preserve-3d;
+    transform: perspective(2400px); /* Perspectiva para o efeito 3D */
+    transition: 3s; /* Transição suave para transformações */
+    z-index: 5;
+} 
+
+
+.card-front3 {
+    position: relative; /* Posicionamento relativo para os filhos */
+    background-color: var(--cor4); /* Cor de fundo branca para a frente do cartão */
+    width: 340px;
+    height: 550px;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    transform-origin: left; /* Origem da transformação para o lado esquerdo */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra interna e externa para efeito visual */
+    transition: .3s; /* Transição suave para transformações */
+}
+.open3 {
+    position: absolute; /* Posicionamento absoluto em relação ao `.christmas-card` */
+    width: 340px;
+    height: 550px;
+    left: 0; /* Alinhado à esquerda do contêiner */
+    top: 0; /* Alinhado ao topo do contêiner */
+    z-index: 6; /* Garante que está acima de outros elementos para ser clicável */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+#open3:checked~.card-front3 {
+    transform: rotateY(-155deg); /* Gira a frente do cartão para 'abrir' */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra para efeito visual */
+}
+
+#open3:checked~.card-front3:before {
+    z-index: 5; /* Posiciona acima de outros elementos internos quando o cartão está aberto */
+}
+.card3 h1{
+    font-family: 'Ephesis', cursive;
+    font-size: 2em;
+    color: white;
+}
+
+
+input#open4{
+    display: none;
+}
+
+.tampa-foto4 {
+    position: relative;
+    width: 340px;
+    height: 550px;
+    transform-style: preserve-3d;
+    transform: perspective(2400px); /* Perspectiva para o efeito 3D */
+    transition: 3s; /* Transição suave para transformações */
+    z-index: 5;
+} 
+
+
+.card-front4 {
+    position: relative; /* Posicionamento relativo para os filhos */
+    background-color: var(--cor4); /* Cor de fundo branca para a frente do cartão */
+    width: 340px;
+    height: 550px;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    transform-origin: right; /* Origem da transformação para o lado esquerdo */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra interna e externa para efeito visual */
+    transition: .3s; /* Transição suave para transformações */
+}
+.open4 {
+    position: absolute; /* Posicionamento absoluto em relação ao `.christmas-card` */
+    width: 340px;
+    height: 550px;
+    left: 0; /* Alinhado à esquerda do contêiner */
+    top: 0; /* Alinhado ao topo do contêiner */
+    z-index: 6; /* Garante que está acima de outros elementos para ser clicável */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+#open4:checked~.card-front4 {
+    transform: rotateY(155deg); /* Gira a frente do cartão para 'abrir' */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra para efeito visual */
+}
+
+#open4:checked~.card-front4:before {
+    z-index: 5; /* Posiciona acima de outros elementos internos quando o cartão está aberto */
+}
+.card4 h1{
+    font-family: 'Ephesis', cursive;
+    font-size: 2em;
+    color: white;
+}
+
+
+input#open5{
+    display: none;
+}
+
+.tampa-foto5 {
+    position: relative;
+    width: 440px;
+    height: 430px;
+    transform-style: preserve-3d;
+    transform: perspective(2400px); /* Perspectiva para o efeito 3D */
+    transition: 3s; /* Transição suave para transformações */
+    z-index: 5;
+} 
+
+
+.card-front5 {
+    position: relative; /* Posicionamento relativo para os filhos */
+    background-color: var(--cor4); /* Cor de fundo branca para a frente do cartão */
+    width: 440px;
+    height: 430px;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    transform-origin: left; /* Origem da transformação para o lado esquerdo */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra interna e externa para efeito visual */
+    transition: .3s; /* Transição suave para transformações */
+}
+.open5 {
+    position: absolute; /* Posicionamento absoluto em relação ao `.christmas-card` */
+    width: 440px;
+    height: 430px;
+    left: 0; /* Alinhado à esquerda do contêiner */
+    top: 0; /* Alinhado ao topo do contêiner */
+    z-index: 6; /* Garante que está acima de outros elementos para ser clicável */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+#open5:checked~.card-front5 {
+    transform: rotateY(-155deg); /* Gira a frente do cartão para 'abrir' */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra para efeito visual */
+}
+
+#open5:checked~.card-front5:before {
+    z-index: 5; /* Posiciona acima de outros elementos internos quando o cartão está aberto */
+}
+.card5 h1{
+    font-family: 'Ephesis', cursive;
+    font-size: 2em;
+    color: white;
+}
+
+
+
+input#open6{
+    display: none;
+}
+
+.tampa-foto6 {
+    position: relative;
+    width: 340px;
+    height: 460px;
+    transform-style: preserve-3d;
+    transform: perspective(2400px); /* Perspectiva para o efeito 3D */
+    transition: 3s; /* Transição suave para transformações */
+    z-index: 5;
+} 
+
+
+.card-front6 {
+    position: relative; /* Posicionamento relativo para os filhos */
+    background-color: var(--cor4); /* Cor de fundo branca para a frente do cartão */
+    width: 340px;
+    height: 460px;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    transform-origin: right; /* Origem da transformação para o lado esquerdo */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra interna e externa para efeito visual */
+    transition: .3s; /* Transição suave para transformações */
+}
+.open6 {
+    position: absolute; /* Posicionamento absoluto em relação ao `.christmas-card` */
+    width: 340px;
+    height: 460px;
+    left: 0; /* Alinhado à esquerda do contêiner */
+    top: 0; /* Alinhado ao topo do contêiner */
+    z-index: 6; /* Garante que está acima de outros elementos para ser clicável */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+#open6:checked~.card-front6 {
+    transform: rotateY(155deg); /* Gira a frente do cartão para 'abrir' */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra para efeito visual */
+}
+
+#open6:checked~.card-front6:before {
+    z-index: 5; /* Posiciona acima de outros elementos internos quando o cartão está aberto */
+}
+.card6 h1{
+    font-family: 'Ephesis', cursive;
+    font-size: 2em;
+    color: white;
+}
+
+
+
+input#open7{
+    display: none;
+}
+
+.tampa-foto7 {
+    position: relative;
+    width: 340px;
+    height: 460px;
+    transform-style: preserve-3d;
+    transform: perspective(2400px); /* Perspectiva para o efeito 3D */
+    transition: 3s; /* Transição suave para transformações */
+    z-index: 5;
+    align-self: center;
+} 
+
+
+.card-front7 {
+    position: relative; /* Posicionamento relativo para os filhos */
+    background-color: var(--cor4); /* Cor de fundo branca para a frente do cartão */
+    width: 340px;
+    height: 460px;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    transform-origin: top; /* Origem da transformação para o lado esquerdo */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra interna e externa para efeito visual */
+    transition: .3s; /* Transição suave para transformações */
+}
+.open7 {
+    position: absolute; /* Posicionamento absoluto em relação ao `.christmas-card` */
+    width: 340px;
+    height: 460px;
+    left: 0; /* Alinhado à esquerda do contêiner */
+    top: 0; /* Alinhado ao topo do contêiner */
+    z-index: 6; /* Garante que está acima de outros elementos para ser clicável */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+#open7:checked~.card-front7 {
+    transform: rotateX(155deg); /* Gira a frente do cartão para 'abrir' */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1); /* Sombra para efeito visual */
+}
+
+#open7:checked~.card-front7:before {
+    z-index: 5; /* Posiciona acima de outros elementos internos quando o cartão está aberto */
+}
+.card7 h1{
+    font-family: 'Ephesis', cursive;
+    font-size: 2em;
+    color: white;
+}

@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Garante que o html e o body ocupem toda a altura da tela */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: green;
+}
+
+body.red-background {
+    background-color: red;
+    background: 
+    linear-gradient(to right, gold 100%, transparent 0px) 0px 40px, /* Fita vertical */
+    linear-gradient(to bottom, gold 100%, transparent 0px) 40px 0px, /* Fita horizontal */
+    red; /* Fundo vermelho */
+    background-size: 100% 20px, 20px 100%, 100% 100%;
+    background-repeat: no-repeat;
+}
+
+main {
+    text-align: justify;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Garante que a main ocupe 100% da largura */
+    height: 100%; /* Garante que a main tenha pelo menos a altura da tela */
+    padding: 20px;
+    box-sizing: border-box; /* Garante que o padding não afete as dimensões da main */
+    overflow: auto; /* Permite rolagem dentro da main, se necessário */
+}
+
+.texto {
+    opacity: 100%;
+    margin-bottom: 40px;
+    transition: 0.3s ease;
+}
+
+.presente {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    transition: all 1.5s ease-in-out;
+    z-index: 10;
+    transform-origin: center;
+    background: red; /* Certifique-se de ter a cor do presente */
+    border-radius: 10px;
+}
+
+.presente.opened {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    transform-origin: center;
+}
+
+.caixa {
+    width: 100%;
+    height: 100%;
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    border: 3px solid black
+}
+
+.fitah {
+    position: absolute;
+    width: 100%;
+    background: gold;
+    height: 20px;
+    top: 40px;
+}
+
+.fitav {
+    position: absolute;
+    width: 20px;
+    background: gold;
+    height: 100%;
+    top: 0px;
+    left: 40px;
+}
+
+.blog {
+    position: absolute; /* Alterado para relative */
+    width: 1000px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.363);
+    opacity: 0;
+    text-align: justify;
+    margin-top: 100px;
+    visibility: hidden; /* Inicialmente oculto */
+    transform: scale(0.8);
+    transition: opacity 1.2s ease, transform 1.2s ease, visibility 1.2s ease;
+}
+
+.blog.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible; /* Torna visível */
+    position: relative;
+    margin-top: 1000px;
+}
+
+.blog h1 {
+    font-size: 4em;
+    font-family: 'Indie Flower', cursive;
+}
+
+.blog p {
+    line-height: 2em;
+}
+
+.img1 {
+    width: 200px;
+    height: 290px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.foto{
+    background-color: bisque;
+    height: 360px;
+    width: 220px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.37);
+}
+.foto h1{
+    font-size: 1em;
+    font-family: 'Indie Flower', cursive;
+
+}
+
+.foto_texo{
+    display: inline-block;
+    flex-direction: row;
+}
